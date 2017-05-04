@@ -111,10 +111,9 @@ int main(){
 	out << "};";
 	
 	cout << "\n\nUm documento " << c << " foi criado nesta pasta." << endl;
-	getch();
-	system("cls");
-	cout << "Author: fabricadealgoritmos@gmail.com";
 	
+	cout << "\nAuthor: fabricadealgoritmos@gmail.com";
+
 		
 	return 0;
 }
