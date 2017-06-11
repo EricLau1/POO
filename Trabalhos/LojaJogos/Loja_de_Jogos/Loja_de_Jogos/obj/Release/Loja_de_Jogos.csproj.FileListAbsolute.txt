@@ -1,0 +1,9 @@
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\bin\Release\Loja_de_Jogos.exe.config
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\bin\Release\Loja_de_Jogos.exe
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\bin\Release\Loja_de_Jogos.pdb
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Release\Loja_de_Jogos.csprojResolveAssemblyReference.cache
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Release\Loja_de_Jogos.Form1.resources
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Release\Loja_de_Jogos.Properties.Resources.resources
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Release\Loja_de_Jogos.csproj.GenerateResource.Cache
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Release\Loja_de_Jogos.exe
+C:\Users\Heitor\Desktop\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Release\Loja_de_Jogos.pdb
