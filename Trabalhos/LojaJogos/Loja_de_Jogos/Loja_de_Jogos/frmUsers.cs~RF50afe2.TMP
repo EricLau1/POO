@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Loja_de_Jogos
+{
+    public partial class frmUsers : Form
+    {
+        public frmUsers()
+        {
+            InitializeComponent();
+        }
+
+        public bool verifica()
+        {
+            string[] campo = new string[4];
+            campo[0] = txtNome.Text;
+            campo[1] = txtUsername.Text;
+            campo[2] = txtEmail.Text;
+            campo[3] = txtSenha.Text;
+            for(int i = 0; i < 4; i++)
+            {
+                if(campo[i] == string.Empty)
+                {
+                    string msg = "Preencha todos os campos!";
+                    MessageBox.Show(msg, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void Bloquear(bool status)
+        {
+            txtNome.Enabled = status;
+            txtUsername.Enabled = status;
+            txtEmail.Enabled = status;
+
+        }
+
+        private void frmUsers_Load(object sender, EventArgs e)
+        {
+            Camadas.DAL.Usuario Usuarios = new Camadas.DAL.Usuario();
+            dgvUsuarios.DataSource = Usuarios.Select();
+            
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+    }
+}

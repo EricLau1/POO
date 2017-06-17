@@ -1,0 +1,197 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Loja_de_Jogos
+{
+    public partial class frmGenero : Form
+    {
+        public frmGenero()
+        {
+            InitializeComponent();
+        }
+
+        private Camadas.MODEL.Genero GeneModel()
+        {
+            Camadas.MODEL.Genero genero = new Camadas.MODEL.Genero();
+            genero.id = Convert.ToInt32(lblId.Text);
+            genero.genero = txtGenero.Text;
+            return genero;
+        }
+
+        private Camadas.DAL.Genero GeneDal()
+        {
+            Camadas.DAL.Genero genero = new Camadas.DAL.Genero();
+            return genero;
+        }
+
+        private void frmGenero_Load(object sender, EventArgs e)
+        {
+            dgvGenero.DataSource = GeneDal().Select();
+        }
+
+        private void dgvGenero_DoubleClick(object sender, EventArgs e)
+        {
+            lblId.Text = dgvGenero.SelectedRows[0].Cells["id"].Value.ToString();
+            txtGenero.Text = dgvGenero.SelectedRows[0].Cells["genero"].Value.ToString();
+        }
+
+        private void lblFechar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
+        //HoversButtons
+        private void hoverFechar(bool hover)
+        {
+            if (hover)
+            {
+                panFechar.BackColor = Color.White;
+                lblFechar.ForeColor = Color.Black;
+            }else
+            {
+                panFechar.BackColor = Color.Black;
+                lblFechar.ForeColor = Color.White;
+            }
+        } // fim
+
+        private void hoverInserir(bool hover)
+        {
+            if (hover)
+            {
+                panInserir.BackColor = Color.White;
+                lblInserir.ForeColor = Color.Black;
+            }
+            else
+            {
+                panInserir.BackColor = Color.Black;
+                lblInserir.ForeColor = Color.White;
+            }
+
+        } // fim
+
+        private void hoverGravar(bool hover)
+        {
+            if (hover)
+            {
+                panGravar.BackColor = Color.White;
+                lblGravar.ForeColor = Color.Black;
+            }
+            else
+            {
+                panGravar.BackColor = Color.Black;
+                lblGravar.ForeColor = Color.White;
+            }
+
+        } // fim
+
+        private void hoverEditar(bool hover)
+        {
+            if (hover)
+            {
+                panEditar.BackColor = Color.White;
+                lblEditar.ForeColor = Color.Black;
+            }
+            else
+            {
+                panEditar.BackColor = Color.Black;
+                lblEditar.ForeColor = Color.White;
+            }
+        } // fim
+
+        private void hoverCancelar(bool hover)
+        {
+            if (hover)
+            {
+                panCancelar.BackColor = Color.White;
+                lblCancelar.ForeColor = Color.Black;
+            }
+            else
+            {
+                panCancelar.BackColor = Color.Black;
+                lblCancelar.ForeColor = Color.White;
+            }
+        } // fim
+
+        private void hoverRemover(bool hover)
+        {
+            if (hover)
+            {
+                panRemover.BackColor = Color.White;
+                lblRemover.ForeColor = Color.Black;
+            }
+            else
+            {
+                panRemover.BackColor = Color.Black;
+                lblRemover.ForeColor = Color.White;
+            }
+        }
+
+        private void lblInserir_MouseHover(object sender, EventArgs e)
+        {
+            hoverInserir(true);
+        }
+
+        private void lblInserir_MouseLeave(object sender, EventArgs e)
+        {
+            hoverInserir(false);
+        }
+
+        private void lblFechar_MouseHover(object sender, EventArgs e)
+        {
+            hoverFechar(true);
+        }
+
+        private void lblFechar_MouseLeave(object sender, EventArgs e)
+        {
+            hoverFechar(false);
+        }
+
+        private void lblGravar_MouseHover(object sender, EventArgs e)
+        {
+            hoverGravar(true);
+        }
+
+        private void lblGravar_MouseLeave(object sender, EventArgs e)
+        {
+            hoverGravar(false);
+        }
+
+        private void lblEditar_MouseHover(object sender, EventArgs e)
+        {
+            hoverEditar(true);
+        }
+
+        private void lblEditar_MouseLeave(object sender, EventArgs e)
+        {
+            hoverEditar(false);
+        }
+
+        private void lblCancelar_MouseHover(object sender, EventArgs e)
+        {
+            hoverCancelar(true);
+        }
+
+        private void lblCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            hoverCancelar(false);
+        }
+
+        private void lblRemover_MouseHover(object sender, EventArgs e)
+        {
+            hoverRemover(true);
+        }
+
+        private void lblRemover_MouseLeave(object sender, EventArgs e)
+        {
+            hoverRemover(false);
+        }
+    } // fim class
+}

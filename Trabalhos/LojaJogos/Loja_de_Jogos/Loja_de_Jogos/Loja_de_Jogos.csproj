@@ -45,21 +45,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camadas\BLL\ChaveProduto.cs" />
+    <Compile Include="Camadas\BLL\Genero.cs" />
+    <Compile Include="Camadas\BLL\Jogo.cs" />
+    <Compile Include="Camadas\DAL\ChaveProduto.cs" />
+    <Compile Include="Camadas\DAL\Compra.cs" />
     <Compile Include="Camadas\DAL\Conexao.cs" />
     <Compile Include="Camadas\DAL\Genero.cs" />
     <Compile Include="Camadas\DAL\Jogo.cs" />
+    <Compile Include="Camadas\DAL\Usuario.cs" />
+    <Compile Include="Camadas\MODEL\ChaveProduto.cs" />
+    <Compile Include="Camadas\MODEL\Compra.cs" />
     <Compile Include="Camadas\MODEL\Genero.cs" />
     <Compile Include="Camadas\MODEL\Jogo.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Camadas\MODEL\Usuario.cs" />
+    <Compile Include="frmChaves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmChaves.Designer.cs">
+      <DependentUpon>frmChaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompra.Designer.cs">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenero.Designer.cs">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJogo.Designer.cs">
+      <DependentUpon>frmJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOJA_DE_JOGOSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LOJA_DE_JOGOSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmChaves.resx">
+      <DependentUpon>frmChaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompra.resx">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenero.resx">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJogo.resx">
+      <DependentUpon>frmJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -70,6 +129,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="LOJA_DE_JOGOSDataSet.xsc">
+      <DependentUpon>LOJA_DE_JOGOSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LOJA_DE_JOGOSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LOJA_DE_JOGOSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LOJA_DE_JOGOSDataSet.xss">
+      <DependentUpon>LOJA_DE_JOGOSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,8 +153,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Camadas\BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

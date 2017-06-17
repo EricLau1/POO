@@ -1,1 +1,14 @@
 C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\bin\Debug\Loja_de_Jogos.exe.config
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\bin\Debug\Loja_de_Jogos.exe
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\bin\Debug\Loja_de_Jogos.pdb
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.csprojResolveAssemblyReference.cache
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.Properties.Resources.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.csproj.GenerateResource.Cache
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.exe
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.pdb
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmMenu.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmUsers.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmGenero.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmCompra.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmJogo.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmChaves.resources

@@ -46,8 +46,7 @@ namespace Loja_de_Jogos.Camadas.DAL
         public void Insert(MODEL.Genero genero)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "insert into Genero values ";
-            sql += "(@genero);";
+            string sql = "insert into Genero values (@genero);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@genero", genero.genero);
             conexao.Open();
@@ -57,7 +56,7 @@ namespace Loja_de_Jogos.Camadas.DAL
             }
             catch
             {
-                Console.WriteLine("Deu erro nessa poha!!!");
+                Console.WriteLine("Insert ERROR!!!");
             }
             finally
             {
@@ -91,7 +90,7 @@ namespace Loja_de_Jogos.Camadas.DAL
         public void Update(MODEL.Genero genero)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Genero set genero=@genero ";
+            string sql = "update Genero set genero=@genero ";
             sql += "where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@genero", genero.genero);

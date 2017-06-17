@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Loja_de_Jogos.Camadas.DAL
 {
-   public class Jogo
+    public class Jogo
     {
         private string strCon = Conexao.getConexao();
 
@@ -24,7 +24,7 @@ namespace Loja_de_Jogos.Camadas.DAL
             try
             {
                 SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while(reader.Read())
+                while (reader.Read())
                 {
                     MODEL.Jogo jogo = new MODEL.Jogo();
                     jogo.id = int.Parse(reader["id"].ToString());
@@ -35,10 +35,10 @@ namespace Loja_de_Jogos.Camadas.DAL
                     jogo.valor = Convert.ToSingle(reader["valor"].ToString());
                     jogo.descricao = reader["descricao"].ToString();
                     lstJogos.Add(jogo);
-   
+
                 }
             }
-            catch 
+            catch
             {
                 Console.WriteLine("Deu erro nessa poha!!!");
             }
@@ -48,7 +48,83 @@ namespace Loja_de_Jogos.Camadas.DAL
             }
             return lstJogos;
         }//FIM METODO SELECT
-   
+
+        public void Insert(MODEL.Jogo jogo)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Insert into Jogo values ";
+            sql += "(@idGenero, @nome, @desenvolvedora, @distribuidora, @valor, @descricao);";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idGenero", jogo.idGenero);
+            cmd.Parameters.AddWithValue("@nome", jogo.nome);
+            cmd.Parameters.AddWithValue("@desenvolvedora", jogo.desenvolvedora);
+            cmd.Parameters.AddWithValue("@distribuidora", jogo.distribuidora);
+            cmd.Parameters.AddWithValue("@valor", jogo.valor);
+            cmd.Parameters.AddWithValue("@descricao", jogo.descricao);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro nessa bagaça!!!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }//FIM do metodo INSERT
+
+        public void Delete(MODEL.Jogo jogo)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Delete from Jogo where id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", jogo.id);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro nessa bagaça!!!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }//FIM do metodo delete
+
+        public void Update(MODEL.Jogo jogo)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "update Jogo set idGenero=@idGenero, ";
+            sql += "nome=@nome, desenvolvedora=@desenvolvedora, distribuidora=@distribuidora, valor=@valor, descricao=@descricao ";
+            sql += " where id=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idGenero", jogo.idGenero);
+            cmd.Parameters.AddWithValue("@nome", jogo.nome);
+            cmd.Parameters.AddWithValue("@desenvolvedora", jogo.desenvolvedora);
+            cmd.Parameters.AddWithValue("@distribuidora", jogo.distribuidora);
+            cmd.Parameters.AddWithValue("@valor", jogo.valor);
+            cmd.Parameters.AddWithValue("@descricao", jogo.descricao);
+            cmd.Parameters.AddWithValue("@id", jogo.id);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro nessa bagaça!!!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }//FIM do metodo update
 
     }
 }
