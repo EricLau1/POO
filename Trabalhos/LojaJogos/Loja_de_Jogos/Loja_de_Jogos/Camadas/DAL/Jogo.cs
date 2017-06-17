@@ -49,6 +49,42 @@ namespace Loja_de_Jogos.Camadas.DAL
             return lstJogos;
         }//FIM METODO SELECT
 
+
+        public string BuscaNome(int id)
+        {
+            string busca = "";
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Jogo where id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+            conexao.Open();
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    MODEL.Usuario usuario = new MODEL.Usuario();
+                    usuario.id = Convert.ToInt32(reader["id"].ToString());
+                    if (id == usuario.id)
+                    {
+                        usuario.nome = reader["nome"].ToString();
+                        busca = usuario.nome;
+                    }
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("Select from ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return busca;
+        }// fim do Metodo Select
+
         public void Insert(MODEL.Jogo jogo)
         {
             SqlConnection conexao = new SqlConnection(strCon);

@@ -47,12 +47,6 @@ namespace Loja_de_Jogos
             return usuario;
         }
 
-        private Camadas.DAL.Usuario UserDal()
-        {
-            Camadas.DAL.Usuario usuario = new Camadas.DAL.Usuario();
-            return usuario;
-        }
-
         public void Habilitar(bool status)
         {
             txtNome.Enabled = status;
@@ -72,7 +66,7 @@ namespace Loja_de_Jogos
 
         private void frmUsers_Load(object sender, EventArgs e)
         {
-            Camadas.DAL.Usuario Usuarios = new Camadas.DAL.Usuario();
+            Camadas.BLL.Usuario Usuarios = new Camadas.BLL.Usuario();
             dgvUsuarios.DataSource = Usuarios.Select();
             Habilitar(false);
             
@@ -99,6 +93,68 @@ namespace Loja_de_Jogos
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void lblInserir_Click(object sender, EventArgs e)
+        {
+            Habilitar(true);
+            txtNome.Focus();
+            Limpar();
+        }
+
+        private void lblGravar_Click(object sender, EventArgs e)
+        {
+            if (verifica())
+            {
+                Camadas.MODEL.Usuario user = new Camadas.MODEL.Usuario();
+                user.nome = txtNome.Text;
+                user.username = txtUsername.Text;
+                user.email = txtEmail.Text;
+                user.senha = txtSenha.Text;
+
+                Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+                bllUser.Insert(user);
+                dgvUsuarios.DataSource = bllUser.Select();
+                Limpar();
+        
+            }
+        }
+
+        private void lblEditar_Click(object sender, EventArgs e)
+        {
+            if(lblId.Text != "0")
+            {
+                Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+                bllUser.Update(UserModel());
+                dgvUsuarios.DataSource = bllUser.Select();
+                Limpar();
+            }else
+            {
+                string msg = "Selecione um usuário na tabela";
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void lblRemover_Click(object sender, EventArgs e)
+        {
+            if (lblId.Text != "0")
+            {
+                Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+                bllUser.Delete(UserModel());
+                dgvUsuarios.DataSource = bllUser.Select();
+                Limpar();
+            }
+            else
+            {
+                string msg = "Selecione um usuário na tabela";
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void lblCancelar_Click(object sender, EventArgs e)
+        {
+            Habilitar(false);
+            Limpar();
         }
     }
 }

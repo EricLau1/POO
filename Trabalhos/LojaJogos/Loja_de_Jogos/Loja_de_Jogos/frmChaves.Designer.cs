@@ -80,6 +80,7 @@
             this.lblCancelar.Size = new System.Drawing.Size(107, 24);
             this.lblCancelar.TabIndex = 28;
             this.lblCancelar.Text = "&Cancelar";
+            this.lblCancelar.Click += new System.EventHandler(this.lblCancelar_Click);
             // 
             // lblRemover
             // 
@@ -92,6 +93,7 @@
             this.lblRemover.Size = new System.Drawing.Size(105, 24);
             this.lblRemover.TabIndex = 27;
             this.lblRemover.Text = "&Remover";
+            this.lblRemover.Click += new System.EventHandler(this.lblRemover_Click);
             // 
             // lblEditar
             // 
@@ -104,6 +106,7 @@
             this.lblEditar.Size = new System.Drawing.Size(65, 24);
             this.lblEditar.TabIndex = 26;
             this.lblEditar.Text = "&Editar";
+            this.lblEditar.Click += new System.EventHandler(this.lblEditar_Click);
             // 
             // lblGravar
             // 
@@ -116,6 +119,7 @@
             this.lblGravar.Size = new System.Drawing.Size(81, 24);
             this.lblGravar.TabIndex = 25;
             this.lblGravar.Text = "&Gravar";
+            this.lblGravar.Click += new System.EventHandler(this.lblGravar_Click);
             // 
             // lblInserir
             // 
@@ -128,6 +132,7 @@
             this.lblInserir.Size = new System.Drawing.Size(65, 24);
             this.lblInserir.TabIndex = 24;
             this.lblInserir.Text = "&Inserir";
+            this.lblInserir.Click += new System.EventHandler(this.lblInserir_Click);
             // 
             // dgvChaves
             // 
@@ -136,6 +141,7 @@
             this.dgvChaves.Name = "dgvChaves";
             this.dgvChaves.Size = new System.Drawing.Size(600, 150);
             this.dgvChaves.TabIndex = 29;
+            this.dgvChaves.DoubleClick += new System.EventHandler(this.dgvChaves_DoubleClick);
             // 
             // label1
             // 
@@ -191,6 +197,7 @@
             // 
             this.txtChave.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChave.Location = new System.Drawing.Point(366, 383);
+            this.txtChave.MaxLength = 10;
             this.txtChave.Name = "txtChave";
             this.txtChave.Size = new System.Drawing.Size(335, 31);
             this.txtChave.TabIndex = 36;
@@ -199,6 +206,7 @@
             // 
             this.txtStatus.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus.Location = new System.Drawing.Point(366, 429);
+            this.txtStatus.MaxLength = 1;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(50, 31);
             this.txtStatus.TabIndex = 37;

@@ -48,6 +48,41 @@ namespace Loja_de_Jogos.Camadas.DAL
             return lstUsers;
         }// fim do Metodo Select
 
+        public string BuscaNome(int id)
+        {
+            string busca = "";
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Usuario where id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+            conexao.Open();
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    MODEL.Usuario usuario = new MODEL.Usuario();
+                    usuario.id = Convert.ToInt32(reader["id"].ToString());
+                    if(id == usuario.id)
+                    {
+                        usuario.nome = reader["nome"].ToString();
+                        busca = usuario.nome;
+                    }
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("Select from ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return busca;
+        }// fim do Metodo Select
+
         //Metodo para Inserir Dados
         public void Insert(MODEL.Usuario usuario)
         {
@@ -73,6 +108,8 @@ namespace Loja_de_Jogos.Camadas.DAL
                 conexao.Close();
             }
         }// fim metodo Insert
+
+
 
         // Metodo para deletar um registro de Usuario
         public void Delete(MODEL.Usuario usuario)

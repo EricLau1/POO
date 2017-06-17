@@ -67,7 +67,57 @@ namespace Loja_de_Jogos.Camadas.DAL
             {
                 conexao.Close();
             }
-        }
+        } // fim metodo Insert
+
+        public void Update(MODEL.ChaveProduto cp)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "update Chave_Produto set ";
+            sql += "idJogo=@idJogo, chave=@chave, status=@status ";
+            sql += "where codigo=@codigo;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idJogo", cp.idJogo);
+            cmd.Parameters.AddWithValue("@chave", cp.chave);
+            cmd.Parameters.AddWithValue("@status", cp.status);
+            cmd.Parameters.AddWithValue("@codigo", cp.codigo);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Insert ERROR");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+        }// fim metodo Update
+
+        public void Delete(MODEL.ChaveProduto cp)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "delete from Chave_Produto ";
+            sql += "where codigo=@codigo;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@codigo", cp.codigo);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Insert ERROR");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+        }// fim metodo Update
 
     }// fim class DAL ChaveProduto
 }

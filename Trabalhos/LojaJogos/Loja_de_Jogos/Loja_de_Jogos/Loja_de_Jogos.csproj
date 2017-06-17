@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camadas\BLL\ChaveProduto.cs" />
+    <Compile Include="Camadas\BLL\Compra.cs" />
     <Compile Include="Camadas\BLL\Genero.cs" />
     <Compile Include="Camadas\BLL\Jogo.cs" />
+    <Compile Include="Camadas\BLL\Usuario.cs" />
     <Compile Include="Camadas\DAL\ChaveProduto.cs" />
     <Compile Include="Camadas\DAL\Compra.cs" />
     <Compile Include="Camadas\DAL\Conexao.cs" />

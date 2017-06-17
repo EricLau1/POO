@@ -14,6 +14,12 @@ namespace Loja_de_Jogos.Camadas.BLL
             return jogo.Select();
         }
 
+        public string BuscaNome(int id)
+        {
+            DAL.Jogo dalJogo = new DAL.Jogo();
+            return dalJogo.BuscaNome(id);
+        }
+
         public void Insert(MODEL.Jogo jogo)
         {
             DAL.Jogo dalJogo = new DAL.Jogo();

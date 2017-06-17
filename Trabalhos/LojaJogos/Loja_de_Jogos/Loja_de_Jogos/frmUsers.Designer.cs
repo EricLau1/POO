@@ -181,6 +181,7 @@
             this.lblCancelar.Size = new System.Drawing.Size(107, 24);
             this.lblCancelar.TabIndex = 28;
             this.lblCancelar.Text = "&Cancelar";
+            this.lblCancelar.Click += new System.EventHandler(this.lblCancelar_Click);
             // 
             // lblRemover
             // 
@@ -193,6 +194,7 @@
             this.lblRemover.Size = new System.Drawing.Size(105, 24);
             this.lblRemover.TabIndex = 27;
             this.lblRemover.Text = "&Remover";
+            this.lblRemover.Click += new System.EventHandler(this.lblRemover_Click);
             // 
             // lblEditar
             // 
@@ -205,6 +207,7 @@
             this.lblEditar.Size = new System.Drawing.Size(65, 24);
             this.lblEditar.TabIndex = 26;
             this.lblEditar.Text = "&Editar";
+            this.lblEditar.Click += new System.EventHandler(this.lblEditar_Click);
             // 
             // lblGravar
             // 
@@ -217,6 +220,7 @@
             this.lblGravar.Size = new System.Drawing.Size(81, 24);
             this.lblGravar.TabIndex = 25;
             this.lblGravar.Text = "&Gravar";
+            this.lblGravar.Click += new System.EventHandler(this.lblGravar_Click);
             // 
             // lblInserir
             // 
@@ -229,6 +233,7 @@
             this.lblInserir.Size = new System.Drawing.Size(65, 24);
             this.lblInserir.TabIndex = 24;
             this.lblInserir.Text = "&Inserir";
+            this.lblInserir.Click += new System.EventHandler(this.lblInserir_Click);
             // 
             // btnSair
             // 

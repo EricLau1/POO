@@ -22,18 +22,29 @@ namespace Loja_de_Jogos
             this.Dispose();
         }
 
-        private Camadas.DAL.Compra compraDal()
+        private Camadas.BLL.Compra bllCompra()
         {
-            Camadas.DAL.Compra compra = new Camadas.DAL.Compra();
+            Camadas.BLL.Compra compra = new Camadas.BLL.Compra();
             return compra;
         }
 
         private void frmCompra_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lOJA_DE_JOGOSDataSet.Compra' table. You can move, or remove it, as needed.
-            this.compraTableAdapter.Fill(this.lOJA_DE_JOGOSDataSet.Compra);
+            dgvCompra.DataSource = bllCompra().Select();
+        }
 
-            dgvCompra.DataSource = compraDal().Select();
+        private void dgvCompra_DoubleClick(object sender, EventArgs e)
+        {
+            
+            lblDataHora.Text = dgvCompra.SelectedRows[0].Cells["horaCompra"].Value.ToString();
+
+            Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+            lblUser.Text = dgvCompra.SelectedRows[0].Cells["idUser"].Value.ToString();
+            txtUser.Text = bllUser.BuscaNome(Convert.ToInt32(lblUser.Text));
+
+            Camadas.BLL.Jogo bllJogo = new Camadas.BLL.Jogo();
+            lblJogo.Text = dgvCompra.SelectedRows[0].Cells["idJogo"].Value.ToString();
+            txtJogo.Text = bllJogo.BuscaNome(Convert.ToInt32(lblJogo.Text));
         }
     }
 }
