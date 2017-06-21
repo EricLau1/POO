@@ -58,7 +58,7 @@
             this.lblUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsuarios.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarios.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuarios.Location = new System.Drawing.Point(74, 131);
+            this.lblUsuarios.Location = new System.Drawing.Point(77, 131);
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(109, 30);
             this.lblUsuarios.TabIndex = 1;
@@ -84,7 +84,7 @@
             this.lblGeneros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblGeneros.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeneros.ForeColor = System.Drawing.Color.Black;
-            this.lblGeneros.Location = new System.Drawing.Point(80, 285);
+            this.lblGeneros.Location = new System.Drawing.Point(77, 285);
             this.lblGeneros.Name = "lblGeneros";
             this.lblGeneros.Size = new System.Drawing.Size(114, 30);
             this.lblGeneros.TabIndex = 3;
@@ -99,9 +99,9 @@
             this.lblCompras.ForeColor = System.Drawing.Color.Black;
             this.lblCompras.Location = new System.Drawing.Point(77, 362);
             this.lblCompras.Name = "lblCompras";
-            this.lblCompras.Size = new System.Drawing.Size(122, 30);
+            this.lblCompras.Size = new System.Drawing.Size(61, 30);
             this.lblCompras.TabIndex = 4;
-            this.lblCompras.Text = "Compras";
+            this.lblCompras.Text = "Loja";
             this.lblCompras.Click += new System.EventHandler(this.lblCompras_Click);
             // 
             // button1

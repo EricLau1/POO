@@ -85,6 +85,12 @@
     <Compile Include="frmJogo.Designer.cs">
       <DependentUpon>frmJogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoja.Designer.cs">
+      <DependentUpon>frmLoja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmJogo.resx">
       <DependentUpon>frmJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoja.resx">
+      <DependentUpon>frmLoja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

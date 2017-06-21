@@ -12,3 +12,4 @@ C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos
 C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmCompra.resources
 C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmJogo.resources
 C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmChaves.resources
+C:\Users\eric\Documents\GitHub\Disciplinas\poo\Trabalhos\LojaJogos\Loja_de_Jogos\Loja_de_Jogos\obj\Debug\Loja_de_Jogos.frmLoja.resources

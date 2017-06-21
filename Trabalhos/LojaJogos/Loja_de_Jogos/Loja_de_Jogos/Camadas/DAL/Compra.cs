@@ -20,6 +20,7 @@ namespace Loja_de_Jogos.Camadas.DAL
             string sql = "select * from Compra;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             conexao.Open();
+            
             try
             {
                 SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
@@ -75,6 +76,53 @@ namespace Loja_de_Jogos.Camadas.DAL
             }
 
             return lstCompra;
-        }
+        }// fim do metodo SelectByUJ
+
+        public void Insert(MODEL.Compra compra)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "insert into Compra values ";
+            sql += "(@horaCompra, @idUser, @idJogo);";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@horaCompra", DateTime.Now.ToLongTimeString());
+            cmd.Parameters.AddWithValue("@idUser", compra.idUser);
+            cmd.Parameters.AddWithValue("@idJogo", compra.idJogo);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Insert ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+        }// fim metodo Insert
+
+        public void Delete(MODEL.Compra compra)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Delete from Compra where idJogo=@idJogo AND idUser=@idUser;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idJogo", compra.idJogo);
+            cmd.Parameters.AddWithValue("@idUser", compra.idUser);
+            conexao.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Delete ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        } // fim metodo Delete
     }// fim Class DAL Compra
 }

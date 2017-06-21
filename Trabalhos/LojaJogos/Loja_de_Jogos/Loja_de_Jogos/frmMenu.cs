@@ -42,8 +42,8 @@ namespace Loja_de_Jogos
 
         private void lblCompras_Click(object sender, EventArgs e)
         {
-            frmCompra jCompra = new frmCompra();
-            jCompra.Show();
+            frmLoja  jLoja = new frmLoja();
+            jLoja.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

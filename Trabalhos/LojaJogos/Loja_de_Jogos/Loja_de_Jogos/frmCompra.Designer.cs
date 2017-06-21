@@ -36,8 +36,9 @@
             this.lblJogo = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtJogo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblDataHora = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblRemover = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,16 +59,16 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(135, 32);
+            this.label9.Size = new System.Drawing.Size(224, 32);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Compras";
+            this.label9.Text = "Movimentações";
             // 
             // dgvCompra
             // 
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompra.Location = new System.Drawing.Point(32, 136);
+            this.dgvCompra.Location = new System.Drawing.Point(18, 76);
             this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.Size = new System.Drawing.Size(513, 349);
+            this.dgvCompra.Size = new System.Drawing.Size(319, 479);
             this.dgvCompra.TabIndex = 17;
             this.dgvCompra.DoubleClick += new System.EventHandler(this.dgvCompra_DoubleClick);
             // 
@@ -75,7 +76,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(600, 136);
+            this.lblUser.Location = new System.Drawing.Point(360, 87);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(75, 22);
             this.lblUser.TabIndex = 18;
@@ -86,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(581, 186);
+            this.label2.Location = new System.Drawing.Point(585, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 22);
             this.label2.TabIndex = 19;
@@ -96,7 +97,7 @@
             // 
             this.lblJogo.AutoSize = true;
             this.lblJogo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJogo.Location = new System.Drawing.Point(619, 236);
+            this.lblJogo.Location = new System.Drawing.Point(714, 87);
             this.lblJogo.Name = "lblJogo";
             this.lblJogo.Size = new System.Drawing.Size(56, 22);
             this.lblJogo.TabIndex = 20;
@@ -106,7 +107,7 @@
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(705, 137);
+            this.txtUser.Location = new System.Drawing.Point(364, 127);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(183, 31);
             this.txtUser.TabIndex = 21;
@@ -114,30 +115,42 @@
             // txtJogo
             // 
             this.txtJogo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJogo.Location = new System.Drawing.Point(705, 237);
+            this.txtJogo.Location = new System.Drawing.Point(717, 127);
             this.txtJogo.Name = "txtJogo";
             this.txtJogo.Size = new System.Drawing.Size(183, 31);
             this.txtJogo.TabIndex = 22;
             // 
-            // label1
+            // lblData
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(739, 347);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 24);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "DATA / HORA";
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(364, 178);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(51, 19);
+            this.lblData.TabIndex = 23;
+            this.lblData.Text = "Data";
             // 
-            // lblDataHora
+            // lblHora
             // 
-            this.lblDataHora.AutoSize = true;
-            this.lblDataHora.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataHora.Location = new System.Drawing.Point(662, 393);
-            this.lblDataHora.Name = "lblDataHora";
-            this.lblDataHora.Size = new System.Drawing.Size(226, 23);
-            this.lblDataHora.TabIndex = 24;
-            this.lblDataHora.Text = "YYYY-MM-DD  00:00:00";
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(714, 178);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(46, 19);
+            this.lblHora.TabIndex = 24;
+            this.lblHora.Text = "Hora";
+            // 
+            // lblRemover
+            // 
+            this.lblRemover.AutoSize = true;
+            this.lblRemover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRemover.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemover.Location = new System.Drawing.Point(360, 521);
+            this.lblRemover.Name = "lblRemover";
+            this.lblRemover.Size = new System.Drawing.Size(93, 22);
+            this.lblRemover.TabIndex = 25;
+            this.lblRemover.Text = "Remover";
+            this.lblRemover.Click += new System.EventHandler(this.lblRemover_Click);
             // 
             // frmCompra
             // 
@@ -145,8 +158,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(971, 567);
-            this.Controls.Add(this.lblDataHora);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRemover);
+            this.Controls.Add(this.lblHora);
+            this.Controls.Add(this.lblData);
             this.Controls.Add(this.txtJogo);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblJogo);
@@ -175,7 +189,8 @@
         private System.Windows.Forms.Label lblJogo;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtJogo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblDataHora;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblRemover;
     }
 }
