@@ -69,5 +69,17 @@ namespace Loja_de_Jogos
             MessageBox.Show(msg, "Loja", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        private void lblComprar_MouseHover(object sender, EventArgs e)
+        {
+            panComprar.BackColor = Color.Black;
+            lblComprar.ForeColor = Color.DarkGray;
+        }
+
+        private void lblComprar_MouseLeave(object sender, EventArgs e)
+        {
+            panComprar.BackColor = Color.DarkGray;
+            lblComprar.ForeColor = Color.Black;
+        }
     }
 }

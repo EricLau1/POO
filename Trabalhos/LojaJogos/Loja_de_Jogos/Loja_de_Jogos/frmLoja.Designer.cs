@@ -40,6 +40,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblIdJogo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panComprar = new System.Windows.Forms.Panel();
+            this.panComprar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -106,14 +108,18 @@
             // lblComprar
             // 
             this.lblComprar.AutoSize = true;
+            this.lblComprar.BackColor = System.Drawing.Color.White;
             this.lblComprar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblComprar.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComprar.Location = new System.Drawing.Point(411, 171);
+            this.lblComprar.Location = new System.Drawing.Point(14, 14);
             this.lblComprar.Name = "lblComprar";
-            this.lblComprar.Size = new System.Drawing.Size(133, 33);
+            this.lblComprar.Padding = new System.Windows.Forms.Padding(20);
+            this.lblComprar.Size = new System.Drawing.Size(173, 73);
             this.lblComprar.TabIndex = 23;
             this.lblComprar.Text = "Comprar";
             this.lblComprar.Click += new System.EventHandler(this.lblComprar_Click);
+            this.lblComprar.MouseLeave += new System.EventHandler(this.lblComprar_MouseLeave);
+            this.lblComprar.MouseHover += new System.EventHandler(this.lblComprar_MouseHover);
             // 
             // label5
             // 
@@ -160,12 +166,21 @@
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 525);
+            this.label4.Location = new System.Drawing.Point(28, 495);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(232, 33);
             this.label4.TabIndex = 24;
             this.label4.Text = "&Movimentações";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // panComprar
+            // 
+            this.panComprar.BackColor = System.Drawing.Color.DarkGray;
+            this.panComprar.Controls.Add(this.lblComprar);
+            this.panComprar.Location = new System.Drawing.Point(385, 146);
+            this.panComprar.Name = "panComprar";
+            this.panComprar.Size = new System.Drawing.Size(200, 100);
+            this.panComprar.TabIndex = 29;
             // 
             // frmLoja
             // 
@@ -173,12 +188,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(971, 567);
+            this.Controls.Add(this.panComprar);
             this.Controls.Add(this.lblIdJogo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblIdUser);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblComprar);
             this.Controls.Add(this.cmbJogos);
             this.Controls.Add(this.cmbUsers);
             this.Controls.Add(this.label2);
@@ -190,6 +205,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoja";
             this.Load += new System.EventHandler(this.frmLoja_Load);
+            this.panComprar.ResumeLayout(false);
+            this.panComprar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +226,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblIdJogo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panComprar;
     }
 }
