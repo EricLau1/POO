@@ -16,7 +16,6 @@ namespace Loja_de_Jogos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           //Application.Run(new frmLoja());
             Application.Run(new frmMenu());
         }
     }
