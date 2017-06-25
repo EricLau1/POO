@@ -102,6 +102,68 @@ namespace Loja_de_Jogos.Camadas.DAL
             return count;
         } // fim metodo getVendas
 
+        // procurando usuario pelo id
+        public bool DetectedUser(int id)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Compra order by idUser;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            conexao.Open();
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    int x = Convert.ToInt32(reader["idUser"]);
+                    if(x == id)
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Select ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return true;
+        }// fim do Metodos DetectedUser
+
+        // procurando Jogo pelo id
+        public bool DetectedGame(int id)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Compra order by idJogo;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            conexao.Open();
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    int x = Convert.ToInt32(reader["idJogo"]);
+                    if (x == id)
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Select ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return true;
+        }// fim do Metodos DetectedGame
+
         public void TesteInnerJoin()
         {
             SqlConnection conexao = new SqlConnection(strCon);

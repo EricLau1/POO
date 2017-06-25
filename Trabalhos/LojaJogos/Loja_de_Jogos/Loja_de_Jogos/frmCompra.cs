@@ -50,7 +50,6 @@ namespace Loja_de_Jogos
             lblTotVendas.Text = bllCompra().getVendas().ToString();
 
             lblTotValor.Text = bllCompra().getValorMax().ToString();
-
         }
 
         private void dgvCompra_DoubleClick(object sender, EventArgs e)

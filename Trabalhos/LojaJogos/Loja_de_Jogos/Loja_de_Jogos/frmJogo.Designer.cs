@@ -142,6 +142,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(340, 31);
             this.txtNome.TabIndex = 9;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtDev
             // 
@@ -151,6 +152,7 @@
             this.txtDev.Name = "txtDev";
             this.txtDev.Size = new System.Drawing.Size(340, 31);
             this.txtDev.TabIndex = 10;
+            this.txtDev.TextChanged += new System.EventHandler(this.txtDev_TextChanged);
             // 
             // txtDist
             // 
@@ -160,6 +162,7 @@
             this.txtDist.Name = "txtDist";
             this.txtDist.Size = new System.Drawing.Size(340, 31);
             this.txtDist.TabIndex = 11;
+            this.txtDist.TextChanged += new System.EventHandler(this.txtDist_TextChanged);
             // 
             // txtValor
             // 
@@ -169,6 +172,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(103, 31);
             this.txtValor.TabIndex = 12;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // txtDesc
             // 

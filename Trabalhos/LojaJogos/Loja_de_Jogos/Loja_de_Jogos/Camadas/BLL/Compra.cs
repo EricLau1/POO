@@ -43,5 +43,17 @@ namespace Loja_de_Jogos.Camadas.BLL
             DAL.Compra dalCompra = new DAL.Compra();
             return dalCompra.SelectVendaByUser(id);
         }
+
+        public bool DetectedUser(int id)
+        {
+            DAL.Compra dalCompra = new DAL.Compra();
+            return dalCompra.DetectedUser(id);
+        }
+
+        public bool DetectedGame(int id)
+        {
+            DAL.Compra dalCompra = new DAL.Compra();
+            return dalCompra.DetectedGame(id);
+        }
     }
 }

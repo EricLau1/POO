@@ -32,7 +32,7 @@ namespace Loja_de_Jogos
 
         private void Limpar()
         {
-            lblId.Text = "";
+            lblId.Text = "0";
             txtNome.Text = "";
             txtDev.Text = "";
             txtDist.Text = "";
@@ -119,13 +119,19 @@ namespace Loja_de_Jogos
 
         private void lblEditar_Click(object sender, EventArgs e)
         {
-            if (verifica())
+            if (lblId.Text != "0")
             {
                 Camadas.BLL.Jogo bllJogo = new Camadas.BLL.Jogo();
                 bllJogo.Update(getJogo());
                 dgvJogos.DataSource = "";
                 dgvJogos.DataSource = bllJogo.Select();
                 Limpar();
+            }
+            else
+            {
+                string msg = "selecione um jogo na tabela";
+                MessageBox.Show(msg, "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -145,10 +151,29 @@ namespace Loja_de_Jogos
         {
             if (lblId.Text != "0")
             {
-                Camadas.BLL.Jogo bllJogo = new Camadas.BLL.Jogo();
-                bllJogo.Delete(getJogo());
-                dgvJogos.DataSource = bllJogo.Select();
-                Limpar();
+                Camadas.BLL.Compra compra = new Camadas.BLL.Compra();
+                Camadas.BLL.ChaveProduto cp = new Camadas.BLL.ChaveProduto();
+
+                if (compra.DetectedGame(Convert.ToInt32(lblId.Text)) && cp.DetectedGame(Convert.ToInt32(lblId.Text)))
+                {
+                    Camadas.BLL.Jogo bllJogo = new Camadas.BLL.Jogo();
+                    bllJogo.Delete(getJogo());
+                    dgvJogos.DataSource = bllJogo.Select();
+                    Limpar();
+                }
+                else
+                {
+                    if (!compra.DetectedGame(Convert.ToInt32(lblId.Text)))
+                    {
+                        string msg = "Este Jogo está no histórico de compras!";
+                        MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string msg = "Este Jogo possui uma Chave de Produto!";
+                        MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
             else
             {
@@ -160,6 +185,42 @@ namespace Loja_de_Jogos
         private void lblCancelar_Click(object sender, EventArgs e)
         {
             Limpar();
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            string frase = txtNome.Text;
+            if(frase.Length > 33)
+            {
+                txtDev.Focus();
+            }
+        }
+
+        private void txtDev_TextChanged(object sender, EventArgs e)
+        {
+            string frase = txtDev.Text;
+            if (frase.Length > 33)
+            {
+                txtDist.Focus();
+            }
+        }
+
+        private void txtDist_TextChanged(object sender, EventArgs e)
+        {
+            string frase = txtDist.Text;
+            if (frase.Length > 33)
+            {
+                txtValor.Focus();
+            }
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            string frase = txtValor.Text;
+            if (frase.Length > 6)
+            {
+                txtDesc.Focus();
+            }
         }
     }
 }

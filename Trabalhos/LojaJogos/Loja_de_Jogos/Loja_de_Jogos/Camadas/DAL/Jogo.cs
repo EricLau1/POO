@@ -178,7 +178,7 @@ namespace Loja_de_Jogos.Camadas.DAL
         public void Delete(MODEL.Jogo jogo)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Jogo where id=@id;";
+            string sql = "delete from Jogo where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", jogo.id);
             conexao.Open();

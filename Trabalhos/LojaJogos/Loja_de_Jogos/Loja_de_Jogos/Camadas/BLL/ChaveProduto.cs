@@ -31,5 +31,11 @@ namespace Loja_de_Jogos.Camadas.BLL
             DAL.ChaveProduto dalCp = new DAL.ChaveProduto();
             dalCp.Delete(cp);
         }
+
+        public bool DetectedGame(int id)
+        {
+            DAL.ChaveProduto dalCp = new DAL.ChaveProduto();
+            return dalCp.DetectedGame(id);
+        }
     }
 }

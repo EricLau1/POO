@@ -37,6 +37,7 @@ namespace Loja_de_Jogos.Relatorio
                    sw.WriteLine("<tr>");
                    sw.WriteLine("<th> Usuário </th>");
                    sw.WriteLine("<th> Jogo </th>");
+                   sw.WriteLine("<th> Valor </th>");
                    sw.WriteLine("<th> Data/hora</th>");
                 sw.WriteLine("</tr>");
 
@@ -50,6 +51,7 @@ namespace Loja_de_Jogos.Relatorio
                     sw.WriteLine("<tr>");
                     sw.WriteLine("<td>" + bllUser.BuscaNome(compra.idUser) + "</td>");
                     sw.WriteLine("<td>" + bllJogo.BuscaNome(compra.idJogo) + "</td>");
+                    sw.WriteLine("<td>" + bllJogo.BuscaValor(compra.idJogo) + "</td>");
                     sw.WriteLine("<td>" + compra.horaCompra + "</td>"); 
                     sw.WriteLine("</tr>");
                     totJogos++;

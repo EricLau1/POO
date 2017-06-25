@@ -137,12 +137,23 @@ namespace Loja_de_Jogos
 
         private void lblRemover_Click(object sender, EventArgs e)
         {
+            
             if (lblId.Text != "0")
             {
-                Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
-                bllUser.Delete(UserModel());
-                dgvUsuarios.DataSource = bllUser.Select();
-                Limpar();
+                Camadas.BLL.Compra compra = new Camadas.BLL.Compra();
+                if (compra.DetectedUser(Convert.ToInt32(lblId.Text)))
+                {
+                    Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+                    bllUser.Delete(UserModel());
+                    dgvUsuarios.DataSource = bllUser.Select();
+                    Limpar();
+                }
+                else
+                {
+                    string msg = "Este usuario está no histórico de compras!";
+                    MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
             else
             {
@@ -157,9 +168,32 @@ namespace Loja_de_Jogos
             Limpar();
         }
 
+        // muda para o proximo campo quando atinger MaxLenth do campo atual
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            string count = txtNome.Text;
+            if(count.Length > 33)
+            {
+                txtUsername.Focus();
+            }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            string count = txtUsername.Text;
+            if (count.Length > 33)
+            {
+                txtEmail.Focus();
+            }
+        }
+
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-
+            string count = txtEmail.Text;
+            if (count.Length > 33)
+            {
+                txtSenha.Focus();
+            }
         }
     }
 }
