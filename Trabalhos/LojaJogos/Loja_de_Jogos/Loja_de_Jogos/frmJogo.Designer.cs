@@ -52,6 +52,7 @@
             this.lblRemover = new System.Windows.Forms.Label();
             this.lblCancelar = new System.Windows.Forms.Label();
             this.btnAddChave = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJogos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +138,7 @@
             // 
             this.txtNome.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(411, 142);
+            this.txtNome.MaxLength = 35;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(340, 31);
             this.txtNome.TabIndex = 9;
@@ -145,6 +147,7 @@
             // 
             this.txtDev.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDev.Location = new System.Drawing.Point(411, 187);
+            this.txtDev.MaxLength = 35;
             this.txtDev.Name = "txtDev";
             this.txtDev.Size = new System.Drawing.Size(340, 31);
             this.txtDev.TabIndex = 10;
@@ -153,6 +156,7 @@
             // 
             this.txtDist.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDist.Location = new System.Drawing.Point(411, 230);
+            this.txtDist.MaxLength = 35;
             this.txtDist.Name = "txtDist";
             this.txtDist.Size = new System.Drawing.Size(340, 31);
             this.txtDist.TabIndex = 11;
@@ -161,6 +165,7 @@
             // 
             this.txtValor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.Location = new System.Drawing.Point(411, 271);
+            this.txtValor.MaxLength = 7;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(103, 31);
             this.txtValor.TabIndex = 12;
@@ -169,6 +174,7 @@
             // 
             this.txtDesc.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesc.Location = new System.Drawing.Point(411, 322);
+            this.txtDesc.MaxLength = 64;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(477, 31);
             this.txtDesc.TabIndex = 13;
@@ -302,12 +308,23 @@
             this.btnAddChave.UseVisualStyleBackColor = false;
             this.btnAddChave.Click += new System.EventHandler(this.btnAddChave_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(539, 277);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 22);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Ex: 100,00";
+            // 
             // frmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(971, 567);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnAddChave);
             this.Controls.Add(this.lblCancelar);
             this.Controls.Add(this.lblRemover);
@@ -369,5 +386,6 @@
         private System.Windows.Forms.Label lblRemover;
         private System.Windows.Forms.Label lblCancelar;
         private System.Windows.Forms.Button btnAddChave;
+        private System.Windows.Forms.Label label8;
     }
 }

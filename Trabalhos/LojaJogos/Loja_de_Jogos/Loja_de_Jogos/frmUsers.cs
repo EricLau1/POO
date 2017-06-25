@@ -156,5 +156,10 @@ namespace Loja_de_Jogos
             Habilitar(false);
             Limpar();
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

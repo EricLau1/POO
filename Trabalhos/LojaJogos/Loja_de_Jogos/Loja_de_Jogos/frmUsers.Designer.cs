@@ -119,6 +119,7 @@
             // 
             this.txtNome.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(370, 83);
+            this.txtNome.MaxLength = 35;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(342, 31);
             this.txtNome.TabIndex = 6;
@@ -127,6 +128,7 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(370, 130);
+            this.txtUsername.MaxLength = 35;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(342, 31);
             this.txtUsername.TabIndex = 7;
@@ -135,15 +137,19 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(370, 177);
+            this.txtEmail.MaxLength = 35;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(342, 31);
             this.txtEmail.TabIndex = 8;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(370, 225);
+            this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(342, 31);
             this.txtSenha.TabIndex = 9;
             // 

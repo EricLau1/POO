@@ -14,6 +14,12 @@ namespace Loja_de_Jogos.Camadas.BLL
             return DalUser;
         }
 
+        public int getUsuarios()
+        {
+            DAL.Usuario DalUser = new DAL.Usuario();
+            return DalUser.getUsuarios();
+        }
+
         public List<MODEL.Usuario> Select()
         {
             return getUser().Select();   

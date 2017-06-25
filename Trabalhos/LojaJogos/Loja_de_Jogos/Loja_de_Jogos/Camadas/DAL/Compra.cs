@@ -12,12 +12,14 @@ namespace Loja_de_Jogos.Camadas.DAL
     public class Compra
     {
         private string strCon = Conexao.getConexao();
+        private int count;
 
         public List<MODEL.Compra> Select()
         {
+            count = 0;
             List<MODEL.Compra> lstCompra = new List<MODEL.Compra>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "select * from Compra;";
+            string sql = "select * from Compra order by idUser;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             conexao.Open();
             
@@ -30,7 +32,6 @@ namespace Loja_de_Jogos.Camadas.DAL
                     compra.horaCompra = Convert.ToDateTime(reader["horaCompra"].ToString());
                     compra.idUser = Convert.ToInt32(reader["idUser"]);
                     compra.idJogo = Convert.ToInt32(reader["idJogo"]);
-                    //compra.dataCompra = Convert.ToDateTime(reader["dataCompra"].ToString());
                     lstCompra.Add(compra);
                 }
             }
@@ -45,9 +46,64 @@ namespace Loja_de_Jogos.Camadas.DAL
             return lstCompra;
         }// fim do metodo Select
 
-        public List<MODEL.Compra> SelectByUJ()
+        public int SelectVendaByUser(int id)
         {
-            List<MODEL.Compra> lstCompra = new List<MODEL.Compra>();
+            int x = 0;
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Compra where idUser=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+            conexao.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    x++;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Select ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return x;
+        }
+
+        public int getVendas()
+        {
+            count = 0;
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Compra order by idUser;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            conexao.Open();
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    count++;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Select ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return count;
+        } // fim metodo getVendas
+
+        public void TesteInnerJoin()
+        {
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "select Usuario.nome, Jogo.nome, Compra.horaCompra from Compra ";
             sql += "inner join Usuario on Compra.idUser=Usuario.id ";
@@ -63,7 +119,6 @@ namespace Loja_de_Jogos.Camadas.DAL
                     compra.horaCompra = Convert.ToDateTime(reader["horaCompra"].ToString());
                     compra.idUser = Convert.ToInt32(reader["idUser"]);
                     compra.idJogo = Convert.ToInt32(reader["idJogo"]);
-                    lstCompra.Add(compra);
                 }
             }
             catch
@@ -74,9 +129,37 @@ namespace Loja_de_Jogos.Camadas.DAL
             {
                 conexao.Close();
             }
+        }// fim do metodo
 
-            return lstCompra;
-        }// fim do metodo SelectByUJ
+        public Single getValorMax()
+        {
+
+            Single soma = 0;
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Compra order by idJogo;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            conexao.Open();
+            int x;
+            Jogo jogo = new Jogo();
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    x = Convert.ToInt32(reader["idJogo"]);
+                    soma += Convert.ToSingle(jogo.BuscaValor(x));
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Select ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return soma;
+        }
 
         public void Insert(MODEL.Compra compra)
         {

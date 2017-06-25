@@ -28,11 +28,29 @@ namespace Loja_de_Jogos
             return compra;
         }
 
+        private Camadas.BLL.Usuario bllUsers()
+        {
+            Camadas.BLL.Usuario user = new Camadas.BLL.Usuario();
+            return user;
+        }
+
+        private Camadas.BLL.Jogo bllJogos()
+        {
+            Camadas.BLL.Jogo jogo = new Camadas.BLL.Jogo();
+            return jogo;
+        }
+
         private void frmCompra_Load(object sender, EventArgs e)
         {
             dgvCompra.DataSource = bllCompra().Select();
             txtJogo.Enabled = false;
             txtUser.Enabled = false;
+            lblTotUsers.Text = bllUsers().getUsuarios().ToString();
+            lblTotJogos.Text = bllJogos().getJogos().ToString();
+            lblTotVendas.Text = bllCompra().getVendas().ToString();
+
+            lblTotValor.Text = bllCompra().getValorMax().ToString();
+
         }
 
         private void dgvCompra_DoubleClick(object sender, EventArgs e)
@@ -42,12 +60,18 @@ namespace Loja_de_Jogos
             lblUser.Text = dgvCompra.SelectedRows[0].Cells["idUser"].Value.ToString();
             txtUser.Text = bllUser.BuscaNome(Convert.ToInt32(lblUser.Text));
             DateTime dataHora = Convert.ToDateTime(dgvCompra.SelectedRows[0].Cells["horaCompra"].Value);
-            lblData.Text = dataHora.ToShortDateString();
+            lblData.Text = "Data: " + dataHora.ToShortDateString();
 
             Camadas.BLL.Jogo bllJogo = new Camadas.BLL.Jogo();
             lblJogo.Text = dgvCompra.SelectedRows[0].Cells["idJogo"].Value.ToString();
             txtJogo.Text = bllJogo.BuscaNome(Convert.ToInt32(lblJogo.Text));
-            lblHora.Text = dataHora.ToShortTimeString();
+            lblHora.Text = "Hora: " + dataHora.ToShortTimeString();
+
+            int id = Convert.ToInt32(lblJogo.Text);
+            lblValor.Text = "R$ " + bllJogo.BuscaValor(id).ToString();
+
+            id = Convert.ToInt32(lblUser.Text);
+            lblQtdeJogos.Text = bllCompra().SelectVendaByUser(id).ToString();
         }
 
         private void lblRemover_Click(object sender, EventArgs e)
@@ -67,6 +91,11 @@ namespace Loja_de_Jogos
                     dgvCompra.DataSource = bllCompra.Select();
                 }
             }
+        }
+
+        private void lblRelatorio_Click(object sender, EventArgs e)
+        {
+            Relatorio.relCompra.impRelCompra();
         }
     }
 }

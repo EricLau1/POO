@@ -75,6 +75,7 @@
             // 
             this.txtGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenero.Location = new System.Drawing.Point(512, 197);
+            this.txtGenero.MaxLength = 25;
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(158, 31);
             this.txtGenero.TabIndex = 4;

@@ -110,6 +110,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorio\funRel.cs" />
+    <Compile Include="Relatorio\relCompra.cs" />
     <EmbeddedResource Include="frmChaves.resx">
       <DependentUpon>frmChaves.cs</DependentUpon>
     </EmbeddedResource>

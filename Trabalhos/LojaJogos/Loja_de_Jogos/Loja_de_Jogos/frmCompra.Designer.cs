@@ -39,6 +39,19 @@
             this.lblData = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblRemover = new System.Windows.Forms.Label();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotVendas = new System.Windows.Forms.Label();
+            this.lblTotValor = new System.Windows.Forms.Label();
+            this.lblTotUsers = new System.Windows.Forms.Label();
+            this.lblTotJogos = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblQtdeJogos = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblRelatorio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,21 +137,21 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(364, 178);
+            this.lblData.Location = new System.Drawing.Point(369, 178);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(51, 19);
+            this.lblData.Size = new System.Drawing.Size(147, 19);
             this.lblData.TabIndex = 23;
-            this.lblData.Text = "Data";
+            this.lblData.Text = "Data da Compra";
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(714, 178);
+            this.lblHora.Location = new System.Drawing.Point(369, 217);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(46, 19);
+            this.lblHora.Size = new System.Drawing.Size(142, 19);
             this.lblHora.TabIndex = 24;
-            this.lblHora.Text = "Hora";
+            this.lblHora.Text = "Hora da Compra";
             // 
             // lblRemover
             // 
@@ -152,12 +165,157 @@
             this.lblRemover.Text = "Remover";
             this.lblRemover.Click += new System.EventHandler(this.lblRemover_Click);
             // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(728, 178);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(73, 19);
+            this.lblValor.TabIndex = 26;
+            this.lblValor.Text = "Valor R$";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(381, 333);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 18);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Total de Jogos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(381, 366);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 18);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Total de Usuarios";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(381, 432);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 18);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Valor total";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(381, 399);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 18);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Total Vendas";
+            // 
+            // lblTotVendas
+            // 
+            this.lblTotVendas.AutoSize = true;
+            this.lblTotVendas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotVendas.Location = new System.Drawing.Point(576, 399);
+            this.lblTotVendas.Name = "lblTotVendas";
+            this.lblTotVendas.Size = new System.Drawing.Size(16, 18);
+            this.lblTotVendas.TabIndex = 34;
+            this.lblTotVendas.Text = "0";
+            // 
+            // lblTotValor
+            // 
+            this.lblTotValor.AutoSize = true;
+            this.lblTotValor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotValor.Location = new System.Drawing.Point(576, 432);
+            this.lblTotValor.Name = "lblTotValor";
+            this.lblTotValor.Size = new System.Drawing.Size(16, 18);
+            this.lblTotValor.TabIndex = 33;
+            this.lblTotValor.Text = "0";
+            // 
+            // lblTotUsers
+            // 
+            this.lblTotUsers.AutoSize = true;
+            this.lblTotUsers.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotUsers.Location = new System.Drawing.Point(576, 366);
+            this.lblTotUsers.Name = "lblTotUsers";
+            this.lblTotUsers.Size = new System.Drawing.Size(16, 18);
+            this.lblTotUsers.TabIndex = 32;
+            this.lblTotUsers.Text = "0";
+            // 
+            // lblTotJogos
+            // 
+            this.lblTotJogos.AutoSize = true;
+            this.lblTotJogos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotJogos.Location = new System.Drawing.Point(576, 333);
+            this.lblTotJogos.Name = "lblTotJogos";
+            this.lblTotJogos.Size = new System.Drawing.Size(16, 18);
+            this.lblTotJogos.TabIndex = 31;
+            this.lblTotJogos.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(599, 217);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(202, 19);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Qtde. Jogos Comprados";
+            // 
+            // lblQtdeJogos
+            // 
+            this.lblQtdeJogos.AutoSize = true;
+            this.lblQtdeJogos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdeJogos.Location = new System.Drawing.Point(823, 217);
+            this.lblQtdeJogos.Name = "lblQtdeJogos";
+            this.lblQtdeJogos.Size = new System.Drawing.Size(18, 19);
+            this.lblQtdeJogos.TabIndex = 36;
+            this.lblQtdeJogos.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(364, 289);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 19);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Dados Gerais";
+            // 
+            // lblRelatorio
+            // 
+            this.lblRelatorio.AutoSize = true;
+            this.lblRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRelatorio.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRelatorio.Location = new System.Drawing.Point(855, 521);
+            this.lblRelatorio.Name = "lblRelatorio";
+            this.lblRelatorio.Size = new System.Drawing.Size(93, 22);
+            this.lblRelatorio.TabIndex = 38;
+            this.lblRelatorio.Text = "Relatório";
+            this.lblRelatorio.Click += new System.EventHandler(this.lblRelatorio_Click);
+            // 
             // frmCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(971, 567);
+            this.Controls.Add(this.lblRelatorio);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblQtdeJogos);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblTotVendas);
+            this.Controls.Add(this.lblTotValor);
+            this.Controls.Add(this.lblTotUsers);
+            this.Controls.Add(this.lblTotJogos);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblRemover);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblData);
@@ -192,5 +350,18 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblRemover;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotVendas;
+        private System.Windows.Forms.Label lblTotValor;
+        private System.Windows.Forms.Label lblTotUsers;
+        private System.Windows.Forms.Label lblTotJogos;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblQtdeJogos;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblRelatorio;
     }
 }

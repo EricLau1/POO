@@ -12,7 +12,7 @@ namespace Loja_de_Jogos.Camadas.DAL
     public class Jogo
     {
         private string strCon = Conexao.getConexao();
-
+        private int count;
         //método para mostrar os dados na tela
         public List<MODEL.Jogo> Select()
         {
@@ -49,6 +49,32 @@ namespace Loja_de_Jogos.Camadas.DAL
             return lstJogos;
         }//FIM METODO SELECT
 
+        public int getJogos()
+        {
+            count = 0;
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Jogo;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            conexao.Open();
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    count++;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro nessa poha!!!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return count;
+        }
+
 
         public string BuscaNome(int id)
         {
@@ -63,12 +89,12 @@ namespace Loja_de_Jogos.Camadas.DAL
                 SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (reader.Read())
                 {
-                    MODEL.Usuario usuario = new MODEL.Usuario();
-                    usuario.id = Convert.ToInt32(reader["id"].ToString());
-                    if (id == usuario.id)
+                    MODEL.Jogo jogo = new MODEL.Jogo();
+                    jogo.id = Convert.ToInt32(reader["id"].ToString());
+                    if (id == jogo.id)
                     {
-                        usuario.nome = reader["nome"].ToString();
-                        busca = usuario.nome;
+                        jogo.nome = reader["nome"].ToString();
+                        busca = jogo.nome;
                     }
                 }
 
@@ -83,7 +109,44 @@ namespace Loja_de_Jogos.Camadas.DAL
             }
 
             return busca;
-        }// fim do Metodo Select
+        }// fim do Metodo BuscaNome
+
+
+        public Single BuscaValor(int id)
+        {
+            Single busca = -1;
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Jogo where id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+            conexao.Open();
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    MODEL.Jogo jogo = new MODEL.Jogo();
+                    jogo.id = Convert.ToInt32(reader["id"].ToString());
+                    if (id == jogo.id)
+                    {
+                        jogo.valor = Convert.ToSingle(reader["valor"]);
+                        busca = jogo.valor;
+                        break;
+                    }
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("Select from ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return busca;
+        }// fim do Metodo BuscaValor
 
         public void Insert(MODEL.Jogo jogo)
         {
@@ -161,6 +224,5 @@ namespace Loja_de_Jogos.Camadas.DAL
                 conexao.Close();
             }
         }//FIM do metodo update
-
     }
 }

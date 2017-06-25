@@ -12,6 +12,7 @@ namespace Loja_de_Jogos.Camadas.DAL
    public class Usuario
     {
         private string strCon = Conexao.getConexao();
+        private int count;
 
         //Metodo para vizualizar os dados dos Usuarios
         public List<MODEL.Usuario> Select()
@@ -47,6 +48,34 @@ namespace Loja_de_Jogos.Camadas.DAL
 
             return lstUsers;
         }// fim do Metodo Select
+
+        public int getUsuarios()
+        {
+            count = 0;
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "select * from Usuario;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            conexao.Open();
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    count++;
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("Select from ERROR!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return count;
+        }
 
         public string BuscaNome(int id)
         {
